@@ -13,20 +13,40 @@ EXERCISES.md
 
 Escolha uma das opcoes abaixo:
 
+- Google Colab;
 - VS Code com extensao Jupyter;
 - Jupyter Notebook;
 - JupyterLab.
 
-Tambem e necessario ter Python instalado. O notebook usa apenas bibliotecas padrao do Python, entao nao precisa instalar pacotes extras para executar as celulas atuais.
+Para Google Colab, nao e necessario instalar Python localmente. Para as opcoes locais, e necessario ter Python instalado.
+
+O notebook usa apenas bibliotecas padrao do Python, entao nao precisa instalar pacotes extras para executar as celulas atuais.
+
+## Opcao 1: Rodar Pelo Google Colab
+
+Abra o notebook diretamente no Colab:
+
+```text
+https://colab.research.google.com/github/rodrigorosamuniz/labs-seguranca-notebooks/blob/main/labs/codificacoes-hashes/lab_codificacoes_hashes.ipynb
+```
+
+Depois:
+
+1. Clique em `Conectar`, se o Colab pedir.
+2. Execute a celula de codigo.
+3. Digite um texto ficticio quando o notebook solicitar.
+4. Compare as saidas geradas.
 
 ## Como Baixar O Repositorio
+
+Use esta opcao se quiser rodar localmente pelo VS Code, Jupyter Notebook ou JupyterLab.
 
 ```bash
 git clone https://github.com/rodrigorosamuniz/labs-seguranca-notebooks.git
 cd labs-seguranca-notebooks
 ```
 
-## Opcao 1: Rodar Pelo VS Code
+## Opcao 2: Rodar Pelo VS Code
 
 1. Abra a pasta `labs-seguranca-notebooks` no VS Code.
 2. Instale a extensao `Jupyter`, caso ainda nao tenha.
@@ -34,7 +54,7 @@ cd labs-seguranca-notebooks
 4. Selecione um interpretador Python quando o VS Code pedir.
 5. Clique em `Run All` ou execute as celulas uma por uma.
 
-## Opcao 2: Rodar Pelo Jupyter Notebook
+## Opcao 3: Rodar Pelo Jupyter Notebook
 
 Instale o Jupyter, se necessario:
 
@@ -54,7 +74,7 @@ No navegador, abra:
 labs/codificacoes-hashes/lab_codificacoes_hashes.ipynb
 ```
 
-## Opcao 3: Rodar Pelo JupyterLab
+## Opcao 4: Rodar Pelo JupyterLab
 
 Instale o JupyterLab, se necessario:
 
