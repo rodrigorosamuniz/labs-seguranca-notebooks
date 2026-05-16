@@ -1,0 +1,25 @@
+query_label,ip,port,transport,org,asn,country,city,product,version,hostnames,vulns,timestamp,cloud
+apache,203.0.113.10,80,tcp,Example Hosting,AS64510,BR,Sao Paulo,Apache httpd,2.4.54,www1.example.edu,CVE-2023-25690,2026-05-10T10:15:00Z,true
+apache,203.0.113.11,443,tcp,Example Hosting,AS64510,BR,Sao Paulo,Apache httpd,2.4.57,portal.example.edu,,2026-05-10T10:16:00Z,true
+apache,198.51.100.21,8080,tcp,Northwind Labs,AS64520,US,Ashburn,Apache Tomcat,9.0.68,app1.northwind.test,CVE-2024-21733;CVE-2023-46589,2026-05-10T11:20:00Z,true
+apache,198.51.100.22,8443,tcp,Northwind Labs,AS64520,US,Ashburn,Apache Tomcat,10.1.18,app2.northwind.test,,2026-05-10T11:21:00Z,true
+apache,192.0.2.30,80,tcp,Contoso University,AS64530,PT,Lisbon,Apache httpd,,intranet.contoso.example,,2026-05-10T12:00:00Z,false
+nginx,203.0.113.40,80,tcp,Example Hosting,AS64510,BR,Rio de Janeiro,nginx,1.22.1,site.example.edu,,2026-05-10T12:30:00Z,true
+nginx,203.0.113.41,443,tcp,Example Hosting,AS64510,BR,Rio de Janeiro,nginx,1.24.0,api.example.edu,,2026-05-10T12:31:00Z,true
+nginx,198.51.100.45,443,tcp,Fabrikam Cloud,AS64540,DE,Frankfurt,nginx,1.18.0,shop.fabrikam.test,CVE-2021-23017,2026-05-10T13:10:00Z,true
+nginx,192.0.2.45,8080,tcp,Fabrikam Cloud,AS64540,DE,Frankfurt,nginx,,legacy.fabrikam.test,,2026-05-10T13:11:00Z,true
+nginx,192.0.2.46,80,tcp,Contoso University,AS64530,PT,Porto,nginx,1.20.2,www.contoso.example,,2026-05-10T13:40:00Z,false
+rdp,203.0.113.60,3389,tcp,Example Hosting,AS64510,BR,Sao Paulo,Microsoft Remote Desktop,,rdp01.example.edu,CVE-2019-0708,2026-05-10T14:00:00Z,true
+rdp,203.0.113.61,3389,tcp,Example Hosting,AS64510,BR,Sao Paulo,Microsoft Remote Desktop,,rdp02.example.edu,,2026-05-10T14:01:00Z,true
+rdp,198.51.100.62,3389,tcp,Northwind Labs,AS64520,US,Dallas,Microsoft Remote Desktop,,jumpbox.northwind.test,CVE-2019-0708;CVE-2020-0609,2026-05-10T14:20:00Z,false
+rdp,192.0.2.63,3389,tcp,Fabrikam Cloud,AS64540,DE,Berlin,Microsoft Remote Desktop,,rdp.fabrikam.test,,2026-05-10T14:45:00Z,true
+ssh,203.0.113.70,22,tcp,Example Hosting,AS64510,BR,Sao Paulo,OpenSSH,8.9,ssh01.example.edu,,2026-05-10T15:00:00Z,true
+ssh,198.51.100.71,22,tcp,Northwind Labs,AS64520,US,Ashburn,OpenSSH,7.2,oldssh.northwind.test,CVE-2016-0777,2026-05-10T15:15:00Z,true
+ssh,192.0.2.72,22,tcp,Contoso University,AS64530,PT,Lisbon,OpenSSH,9.3,ssh.contoso.example,,2026-05-10T15:30:00Z,false
+ssh,198.51.100.73,2222,tcp,Fabrikam Cloud,AS64540,DE,Frankfurt,OpenSSH,,admin.fabrikam.test,,2026-05-10T15:45:00Z,true
+elastic,203.0.113.80,9200,tcp,Example Hosting,AS64510,BR,Sao Paulo,Elasticsearch,7.10.2,search.example.edu,CVE-2021-22145,2026-05-10T16:00:00Z,true
+elastic,198.51.100.81,9200,tcp,Northwind Labs,AS64520,US,Ashburn,Elasticsearch,8.8.1,search.northwind.test,,2026-05-10T16:20:00Z,true
+elastic,192.0.2.82,9200,tcp,Fabrikam Cloud,AS64540,DE,Frankfurt,Elasticsearch,,elastic.fabrikam.test,,2026-05-10T16:40:00Z,true
+mysql,203.0.113.90,3306,tcp,Example Hosting,AS64510,BR,Sao Paulo,MySQL,5.7,db01.example.edu,CVE-2016-6662,2026-05-10T17:00:00Z,false
+mysql,198.51.100.91,3306,tcp,Northwind Labs,AS64520,US,Dallas,MySQL,8.0,db.northwind.test,,2026-05-10T17:15:00Z,true
+mongodb,192.0.2.95,27017,tcp,Fabrikam Cloud,AS64540,DE,Berlin,MongoDB,4.2,mongo.fabrikam.test,CVE-2021-32036,2026-05-10T17:40:00Z,true
