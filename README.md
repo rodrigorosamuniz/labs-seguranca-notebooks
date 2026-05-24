@@ -9,6 +9,7 @@ Cada laboratorio fica em uma pasta propria dentro de `labs/`, com notebook, inst
 | Laboratorio | Tema | Material |
 | --- | --- | --- |
 | Codificacoes e hashes | Base64, URL encoding, SHA-256, SHA-512 e diferencas entre codificacao e hash | [Abrir lab](labs/codificacoes-hashes/README.md) |
+| Shodan Excel Analytics | Analise defensiva de resultados Shodan com tabelas, graficos, score e export Excel | [Abrir lab](labs/shodan-excel-analytics/README.md) |
 
 ## Como Usar
 
