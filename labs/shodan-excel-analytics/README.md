@@ -1,10 +1,10 @@
 # Lab: Shodan Excel Analytics
 
-Este laboratorio mostra como transformar resultados do Shodan em uma analise no estilo Excel: tabela normalizada, agrupamentos, graficos, score didatico, resumo executivo e exportacao para `.xlsx`.
+Este laboratório mostra como transformar resultados do Shodan em uma análise no estilo Excel: tabela normalizada, agrupamentos, gráficos, score didático, resumo executivo e exportação para `.xlsx`.
 
 O notebook funciona em modo hibrido:
 
-- `sample`: usa um CSV didatico incluido neste repositorio;
+- `sample`: usa um CSV didático incluido neste repositório;
 - `shodan`: usa a API real do Shodan quando `SHODAN_API_KEY` estiver configurada;
 - `auto`: usa Shodan quando houver chave e usa o CSV de exemplo quando nao houver.
 
@@ -35,11 +35,11 @@ Para usar Shodan real:
 4. Crie um secret chamado `SHODAN_API_KEY`.
 5. Execute o notebook com `MODE = "auto"` ou `MODE = "shodan"`.
 
-Nao cole sua API key diretamente em celulas do notebook.
+Nao cole sua API key diretamente em células do notebook.
 
 ## Opcao 2: Rodar Localmente
 
-Clone o repositorio:
+Clone o repositório:
 
 ```bash
 git clone https://github.com/rodrigorosamuniz/labs-seguranca-notebooks.git
@@ -58,7 +58,7 @@ Abra com VS Code, Jupyter Notebook ou JupyterLab:
 jupyter lab
 ```
 
-Se for usar Shodan real, configure a variavel:
+Se for usar Shodan real, configure a variável:
 
 ```bash
 export SHODAN_API_KEY="sua-chave-aqui"
@@ -66,42 +66,42 @@ export SHODAN_API_KEY="sua-chave-aqui"
 
 ## O Que O Lab Gera
 
-- tabela normalizada com IP, porta, transporte, organizacao, ASN, pais, cidade, produto, versao, hostnames, CVEs e timestamp;
-- graficos estilo Excel por pais, porta, organizacao, ASN, produto e query;
-- comparacao entre queries;
-- analise de CVEs;
-- score didatico de risco;
+- tabela normalizada com IP, porta, transporte, organização, ASN, país, cidade, produto, versao, hostnames, CVEs e timestamp;
+- gráficos estilo Excel por país, porta, organização, ASN, produto e query;
+- comparação entre queries;
+- análise de CVEs;
+- score didático de risco;
 - resumo executivo automatico;
-- exportacao opcional para Excel;
-- exportacao opcional para relatorio Markdown.
+- exportação opcional para Excel;
+- exportação opcional para relatorio Markdown.
 
-## Valor Didatico
+## Valor Didático
 
 O Shodan mostra resultados e filtros, mas o lab ensina a transformar esses resultados em dataset analisavel:
 
 - agrupar exposicao por dimensoes relevantes;
-- priorizar investigacao;
+- priorizar investigação;
 - separar dado bruto de insight;
-- gerar evidencia para relatorio;
+- gerar evidência para relatorio;
 - comparar consultas diferentes;
 - interpretar limites e vieses dos dados.
 
 ## Limites E Cuidados Com A API
 
-Consultas reais ao Shodan podem consumir creditos. O notebook limita `MAX_RESULTS` por padrao e mostra uma estimativa didatica de consumo antes de consultar.
+Consultas reais ao Shodan podem consumir créditos. O notebook limita `MAX_RESULTS` por padrao e mostra uma estimativa didática de consumo antes de consultar.
 
-Use consultas pequenas e controladas durante a aula. Evite automacao massiva, varredura ofensiva ou qualquer uso fora de contexto defensivo/educacional.
+Use consultas pequenas e controladas durante a aula. Evite automação massiva, varredura ofensiva ou qualquer uso fora de contexto defensivo/educacional.
 
 Referencias oficiais:
 
 - Shodan API: https://developer.shodan.io/api
-- Tipos de creditos: https://help.shodan.io/the-basics/credit-types-explained
+- Tipos de créditos: https://help.shodan.io/the-basics/credit-types-explained
 - Download de dados via API: https://help.shodan.io/guides/how-to-download-data-with-api
 
 ## Dados De Exemplo
 
-O arquivo `data/sample_shodan_results.csv` usa IPs de documentacao e dados ficticios. Ele serve para que todos consigam executar o lab mesmo sem conta, chave ou creditos no Shodan.
+O arquivo `data/sample_shodan_results.csv` usa IPs de documentação e dados ficticios. Ele serve para que todos consigam executar o lab mesmo sem conta, chave ou créditos no Shodan.
 
 ## Cuidados
 
-Nao use o lab para atacar, explorar ou tentar acessar sistemas. Resultados do Shodan indicam exposicao observada, mas nao provam explorabilidade. Qualquer achado real deve ser tratado com autorizacao, contexto e processo responsavel.
+Nao use o lab para atacar, explorar ou tentar acessar sistemas. Resultados do Shodan indicam exposicao observada, mas nao provam explorabilidade. Qualquer achado real deve ser tratado com autorização, contexto e processo responsavel.

@@ -1,12 +1,12 @@
-# Exercicios: Shodan Excel Analytics
+# Exercícios: Shodan Excel Analytics
 
 ## Objetivo
 
-Usar resultados simulados ou reais do Shodan para criar uma analise tabular e visual no estilo Excel, com agrupamentos, graficos, score didatico, comparacao entre queries e exportacao de evidencias.
+Usar resultados simulados ou reais do Shodan para criar uma análise tabular e visual no estilo Excel, com agrupamentos, gráficos, score didático, comparação entre queries e exportação de evidências.
 
-## Preparacao
+## Preparação
 
-Abra o notebook conforme o [README do laboratorio](README.md).
+Abra o notebook conforme o [README do laboratório](README.md).
 
 Para comecar, mantenha:
 
@@ -18,7 +18,7 @@ TOP_N = 10
 
 Se voce nao tiver `SHODAN_API_KEY`, o notebook usara automaticamente os dados de exemplo.
 
-## Exercicio 1: Dataset Normalizado
+## Exercício 1: Dataset Normalizado
 
 Execute o notebook ate a exibicao da tabela `df`.
 
@@ -32,15 +32,15 @@ Responda:
 Resultado esperado:
 
 - o aluno identifica que resultados Shodan viram um dataset estruturado;
-- IP e porta nao sao suficientes para analise defensiva.
+- IP e porta nao sao suficientes para análise defensiva.
 
-## Exercicio 2: Graficos Estilo Excel
+## Exercício 2: Gráficos Estilo Excel
 
-Execute os graficos por:
+Execute os gráficos por:
 
-- pais;
+- país;
 - porta;
-- organizacao;
+- organização;
 - produto;
 - ASN.
 
@@ -48,14 +48,14 @@ Responda:
 
 1. Qual porta aparece mais?
 2. Qual produto aparece mais?
-3. Qual organizacao concentra mais registros?
-4. Qual grafico seria melhor para explicar o resultado para uma pessoa nao tecnica?
+3. Qual organização concentra mais registros?
+4. Qual gráfico seria melhor para explicar o resultado para uma pessoa nao técnica?
 
 Resultado esperado:
 
-- o aluno entende como agregacoes transformam listas de hosts em resumo visual.
+- o aluno entende como agregações transformam listas de hosts em resumo visual.
 
-## Exercicio 3: Top N Interativo
+## Exercício 3: Top N Interativo
 
 Altere:
 
@@ -63,7 +63,7 @@ Altere:
 TOP_N = 5
 ```
 
-Execute novamente as celulas de resumo e graficos.
+Execute novamente as células de resumo e gráficos.
 
 Depois altere:
 
@@ -73,79 +73,79 @@ TOP_N = 15
 
 Responda:
 
-1. O que muda nos graficos?
+1. O que muda nos gráficos?
 2. Quando um `TOP_N` menor ajuda?
 3. Quando um `TOP_N` maior ajuda?
 
 Resultado esperado:
 
-- `TOP_N` controla a granularidade da visualizacao;
-- graficos executivos normalmente precisam de menos categorias.
+- `TOP_N` controla a granularidade da visualização;
+- gráficos executivos normalmente precisam de menos categorias.
 
-## Exercicio 4: Score Didatico De Risco
+## Exercício 4: Score Didático De Risco
 
-Execute a secao de score.
+Execute a seção de score.
 
 Responda:
 
 1. Qual host recebeu o maior score?
 2. Quais motivos aparecem em `risk_reasons`?
-3. O score indica explorabilidade real ou priorizacao didatica?
-4. Que informacoes faltariam para confirmar risco real?
+3. O score indica explorabilidade real ou priorização didática?
+4. Que informações faltariam para confirmar risco real?
 
 Resultado esperado:
 
-- o score ajuda a priorizar investigacao;
-- score didatico nao substitui validacao tecnica.
+- o score ajuda a priorizar investigação;
+- score didático nao substitui validação técnica.
 
-## Exercicio 5: Comparacao Entre Queries
+## Exercício 5: Comparação Entre Queries
 
-Observe as tabelas de comparacao por `query_label`.
+Observe as tabelas de comparação por `query_label`.
 
 Responda:
 
-1. Qual query concentra mais portas sensiveis?
+1. Qual query concentra mais portas sensíveis?
 2. Qual query tem mais produtos diferentes?
-3. A comparacao ajuda mais que analisar uma query isolada?
-4. Que query voce adicionaria para enriquecer a analise?
+3. A comparação ajuda mais que analisar uma query isolada?
+4. Que query voce adicionaria para enriquecer a análise?
 
 Resultado esperado:
 
 - comparar queries revela perfis diferentes de exposicao.
 
-## Exercicio 6: Analise De CVEs
+## Exercício 6: Análise De CVEs
 
-Execute a secao de vulnerabilidades.
+Execute a seção de vulnerabilidades.
 
 Responda:
 
 1. Quantas CVEs distintas aparecem?
 2. Qual CVE aparece mais?
 3. Quais produtos estao associados a CVEs?
-4. Por que uma CVE listada pelo Shodan ainda precisa de validacao?
+4. Por que uma CVE listada pelo Shodan ainda precisa de validação?
 
 Resultado esperado:
 
-- CVEs ajudam a priorizar, mas exigem verificacao de contexto, versao e explorabilidade.
+- CVEs ajudam a priorizar, mas exigem verificação de contexto, versao e explorabilidade.
 
-## Exercicio 7: Resumo Executivo
+## Exercício 7: Resumo Executivo
 
-Execute a celula de resumo executivo automatico.
+Execute a célula de resumo executivo automatico.
 
 Responda:
 
-1. O resumo e adequado para publico tecnico?
-2. O resumo e adequado para publico executivo?
-3. Que frase voce adicionaria para explicar limitacoes?
-4. Que grafico voce anexaria ao resumo?
+1. O resumo e adequado para público técnico?
+2. O resumo e adequado para público executivo?
+3. Que frase voce adicionaria para explicar limitações?
+4. Que gráfico voce anexaria ao resumo?
 
 Resultado esperado:
 
-- o aluno aprende a transformar dados tecnicos em narrativa de relatorio.
+- o aluno aprende a transformar dados técnicos em narrativa de relatorio.
 
-## Exercicio 8: Export Excel E Markdown
+## Exercício 8: Export Excel E Markdown
 
-Execute a secao de exportacao com:
+Execute a seção de exportação com:
 
 ```python
 EXPORT_XLSX = True
@@ -156,16 +156,16 @@ Responda:
 
 1. Quais arquivos foram gerados?
 2. Quais abas existem no Excel?
-3. Qual aba voce usaria para investigacao tecnica?
-4. Qual aba voce usaria para apresentacao?
+3. Qual aba voce usaria para investigação técnica?
+4. Qual aba voce usaria para apresentação?
 
 Resultado esperado:
 
 - o aluno gera artefatos reutilizaveis fora do notebook.
 
-## Exercicio 9: Modo Shodan Real
+## Exercício 9: Modo Shodan Real
 
-Use somente se tiver autorizacao, chave Shodan e creditos disponiveis.
+Use somente se tiver autorização, chave Shodan e créditos disponíveis.
 
 Configure `SHODAN_API_KEY` e use uma query pequena, por exemplo:
 
@@ -180,13 +180,13 @@ Responda:
 1. Quantos resultados foram retornados?
 2. A distribuicao por porta foi parecida com o CSV de exemplo?
 3. Apareceram CVEs?
-4. Quantos creditos estavam disponiveis antes da consulta?
+4. Quantos créditos estavam disponíveis antes da consulta?
 
 Resultado esperado:
 
 - o aluno entende o fluxo real, mas com limite controlado.
 
-## Consolidacao Individual
+## Consolidação Individual
 
 Preencha a tabela:
 
@@ -194,12 +194,12 @@ Preencha a tabela:
 | --- | --- |
 | Principal porta observada |  |
 | Principal produto observado |  |
-| Principal organizacao observada |  |
-| Maior score didatico |  |
+| Principal organização observada |  |
+| Maior score didático |  |
 | Principal motivo de risco |  |
-| Grafico mais util para explicar o resultado |  |
-| Limitacao mais importante dos dados |  |
+| Gráfico mais util para explicar o resultado |  |
+| Limitação mais importante dos dados |  |
 
 Depois escreva um paragrafo respondendo:
 
-> Como transformar resultados do Shodan em graficos e tabelas muda a forma de priorizar investigacao defensiva?
+> Como transformar resultados do Shodan em gráficos e tabelas muda a forma de priorizar investigação defensiva?

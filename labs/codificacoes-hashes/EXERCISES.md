@@ -1,24 +1,24 @@
-# Exercicios: Codificacoes E Hashes
+# Exercícios: Codificações E Hashes
 
 ## Objetivo
 
-Praticar conceitos de codificacao e hash usando o notebook `lab_codificacoes_hashes.ipynb`.
+Práticar conceitos de codificação e hash usando o notebook `lab_codificacoes_hashes.ipynb`.
 
-Ao final, o aluno deve conseguir diferenciar representacao reversivel de resumo criptografico, interpretar saidas e explicar usos basicos em seguranca da informacao.
+Ao final, o aluno deve conseguir diferenciar representação reversível de resumo criptográfico, interpretar saídas e explicar usos básicos em seguranca da informação.
 
-## Preparacao
+## Preparação
 
-Abra o notebook conforme o [README do laboratorio](README.md).
+Abra o notebook conforme o [README do laboratório](README.md).
 
-Execute a celula principal pelo menos uma vez usando:
+Execute a célula principal pelo menos uma vez usando:
 
 ```text
 seguranca
 ```
 
-Anote as saidas geradas.
+Anote as saídas geradas.
 
-## Exercicio 1: Primeira Execucao
+## Exercício 1: Primeira Execução
 
 Execute o notebook com o texto:
 
@@ -28,17 +28,17 @@ laboratorio
 
 Responda:
 
-1. Quais saidas foram geradas?
-2. Quais saidas parecem codificacoes?
-3. Quais saidas parecem hashes?
-4. Alguma saida permite reconhecer facilmente o texto original?
+1. Quais saídas foram geradas?
+2. Quais saídas parecem codificações?
+3. Quais saídas parecem hashes?
+4. Alguma saída permite reconhecer facilmente o texto original?
 
 Resultado esperado:
 
-- o notebook gera representacoes diferentes para o mesmo texto;
-- codificacoes e hashes nao devem ser interpretados como a mesma coisa.
+- o notebook gera representações diferentes para o mesmo texto;
+- codificações e hashes nao devem ser interpretados como a mesma coisa.
 
-## Exercicio 2: Maiusculas E Minusculas
+## Exercício 2: Maiusculas E Minusculas
 
 Execute o notebook duas vezes:
 
@@ -50,20 +50,20 @@ seguranca
 Seguranca
 ```
 
-Compare as saidas.
+Compare as saídas.
 
 Responda:
 
-1. As saidas foram iguais ou diferentes?
-2. Uma unica letra maiuscula alterou o hash?
-3. O que isso mostra sobre sensibilidade a pequenas mudancas?
+1. As saídas foram iguais ou diferentes?
+2. Uma única letra maiuscula alterou o hash?
+3. O que isso mostra sobre sensibilidade a pequenas mudanças?
 
 Resultado esperado:
 
 - os hashes mudam quando o texto muda;
 - `seguranca` e `Seguranca` sao entradas diferentes.
 
-## Exercicio 3: Pequena Alteracao No Texto
+## Exercício 3: Pequena Alteração No Texto
 
 Execute o notebook com:
 
@@ -85,10 +85,10 @@ Responda:
 
 Resultado esperado:
 
-- pequenas alteracoes na entrada geram hashes muito diferentes;
-- isso ajuda a detectar alteracoes em arquivos, mensagens ou registros.
+- pequenas alterações na entrada geram hashes muito diferentes;
+- isso ajuda a detectar alterações em arquivos, mensagens ou registros.
 
-## Exercicio 4: Codificacao Nao E Criptografia
+## Exercício 4: Codificação Nao E Criptografia
 
 Execute o notebook com:
 
@@ -96,21 +96,21 @@ Execute o notebook com:
 dados publicos
 ```
 
-Observe as codificacoes geradas.
+Observe as codificações geradas.
 
 Responda:
 
-1. Codificar o texto torna a informacao secreta?
-2. Uma pessoa que conhece o algoritmo consegue reverter a codificacao?
+1. Codificar o texto torna a informação secreta?
+2. Uma pessoa que conhece o algoritmo consegue reverter a codificação?
 3. Por que Base64 nao deve ser tratado como criptografia?
 
 Resultado esperado:
 
-- codificacao muda a representacao;
-- codificacao nao garante confidencialidade;
+- codificação muda a representação;
+- codificação nao garante confidencialidade;
 - Base64 nao protege segredo.
 
-## Exercicio 5: Hash Nao E Codificacao
+## Exercício 5: Hash Nao E Codificação
 
 Execute o notebook com:
 
@@ -123,7 +123,7 @@ Observe os hashes gerados.
 Responda:
 
 1. O hash permite recuperar diretamente o texto original?
-2. Por que hashes sao usados para comparacao de integridade?
+2. Por que hashes sao usados para comparação de integridade?
 3. O que acontece se duas pessoas calcularem o mesmo hash para o mesmo texto?
 
 Resultado esperado:
@@ -132,7 +132,7 @@ Resultado esperado:
 - a mesma entrada deve produzir o mesmo hash;
 - hashes ajudam a verificar se algo foi alterado.
 
-## Exercicio 6: Entrada Vazia Ou Muito Curta
+## Exercício 6: Entrada Vazia Ou Muito Curta
 
 Execute o notebook com uma entrada curta:
 
@@ -146,14 +146,14 @@ Responda:
 
 1. O notebook gera hash para texto curto?
 2. O tamanho do hash muda conforme o tamanho da entrada?
-3. O que isso mostra sobre funcoes de hash?
+3. O que isso mostra sobre funções de hash?
 
 Resultado esperado:
 
-- hashes possuem tamanho de saida definido pelo algoritmo;
-- a saida nao cresce proporcionalmente ao texto de entrada.
+- hashes possuem tamanho de saída definido pelo algoritmo;
+- a saída nao cresce proporcionalmente ao texto de entrada.
 
-## Exercicio 7: Comparar SHA-256 E SHA-512
+## Exercício 7: Comparar SHA-256 E SHA-512
 
 Execute o notebook com:
 
@@ -163,38 +163,38 @@ comparacao de algoritmos
 
 Responda:
 
-1. Qual saida e maior: SHA-256 ou SHA-512?
-2. O numero no nome do algoritmo tem relacao com o tamanho da saida?
-3. Em quais situacoes pode fazer sentido escolher algoritmos de hash mais fortes?
+1. Qual saída e maior: SHA-256 ou SHA-512?
+2. O numero no nome do algoritmo tem relação com o tamanho da saída?
+3. Em quais situações pode fazer sentido escolher algoritmos de hash mais fortes?
 
 Resultado esperado:
 
-- SHA-512 produz saida maior que SHA-256;
+- SHA-512 produz saída maior que SHA-256;
 - o tamanho do resumo depende do algoritmo.
 
-## Exercicio 8: Uso Em Seguranca Da Informacao
+## Exercício 8: Uso Em Seguranca Da Informação
 
 Escolha um texto qualquer ficticio e execute o notebook.
 
 Depois responda:
 
-1. Qual saida voce usaria para transportar texto em um formato seguro para sistemas?
-2. Qual saida voce usaria para verificar integridade?
-3. Qual saida voce nao usaria para esconder segredo?
-4. O que ainda faltaria para armazenar senha de forma segura em producao?
+1. Qual saída voce usaria para transportar texto em um formato seguro para sistemas?
+2. Qual saída voce usaria para verificar integridade?
+3. Qual saída voce nao usaria para esconder segredo?
+4. O que ainda faltaria para armazenar senha de forma segura em produção?
 
 Resultado esperado:
 
-- codificacao pode ajudar em transporte/representacao;
+- codificação pode ajudar em transporte/representação;
 - hash pode ajudar em integridade;
 - Base64 nao deve ser usado para esconder segredo;
 - armazenamento seguro de senha exige controles adicionais, como salt e algoritmos apropriados para senha.
 
-## Consolidacao Individual
+## Consolidação Individual
 
 Preencha a tabela:
 
-| Conceito | E reversivel? | Protege confidencialidade? | Uso tipico |
+| Conceito | E reversível? | Protege confidencialidade? | Uso tipico |
 | --- | --- | --- | --- |
 | Base64 |  |  |  |
 | URL encoding |  |  |  |
@@ -203,7 +203,7 @@ Preencha a tabela:
 
 Depois escreva, com suas palavras:
 
-1. A diferenca entre codificacao e hash.
-2. Um exemplo de uso correto de codificacao.
+1. A diferenca entre codificação e hash.
+2. Um exemplo de uso correto de codificação.
 3. Um exemplo de uso correto de hash.
-4. Um erro comum ao confundir codificacao com seguranca.
+4. Um erro comum ao confundir codificação com seguranca.

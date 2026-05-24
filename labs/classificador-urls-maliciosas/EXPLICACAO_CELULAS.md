@@ -1,6 +1,6 @@
-# Explicacao Didatica Das Celulas
+# Explicação Didática Das Células
 
-Este arquivo explica o que cada celula do notebook faz. A ideia e ajudar alunos que nunca tiveram contato com modelos de IA, aprendizado de maquina ou classificacao automatica.
+Este arquivo explica o que cada célula do notebook faz. A ideia e ajudar alunos que nunca tiveram contato com modelos de IA, aprendizado de maquina ou classificação automatica.
 
 Antes de comecar, um ponto importante: este notebook nao usa um LLM, como ChatGPT, Gemini ou Claude. Ele usa aprendizado de maquina supervisionado. Isso significa que o modelo aprende a partir de exemplos ja classificados:
 
@@ -17,22 +17,22 @@ O notebook segue este caminho:
 2. Baixa bases publicas de URLs.
 3. Marca cada URL como maliciosa ou benigna.
 4. Transforma URLs, que sao texto, em numeros.
-5. Treina um modelo de classificacao.
+5. Treina um modelo de classificação.
 6. Avalia o desempenho.
 7. Mostra exemplos classificados.
-8. Permite testar URLs digitadas pelo usuario.
+8. Permite testar URLs digitadas pelo usuário.
 
-## Celula 1: Titulo E Objetivos
+## Célula 1: Titulo E Objetivos
 
 Tipo: Markdown.
 
-Esta celula apresenta o laboratorio:
+Esta célula apresenta o laboratório:
 
 ```text
 Laboratorio: Classificador de URLs Maliciosas em Larga Escala
 ```
 
-Ela tambem explica os objetivos principais:
+Ela tambem explica os objetivos principaís:
 
 - carregar datasets grandes de URLs;
 - pre-processar URLs;
@@ -40,25 +40,25 @@ Ela tambem explica os objetivos principais:
 - avaliar o desempenho;
 - testar URLs avulsas.
 
-Essa celula nao executa codigo. Ela serve como introducao para o aluno entender o que sera feito.
+Essa célula nao executa código. Ela serve como introducao para o aluno entender o que sera feito.
 
-## Celula 2: Secao De Instalacao E Imports
+## Célula 2: Seção De Instalação E Imports
 
 Tipo: Markdown.
 
-Esta celula apenas cria o titulo da secao:
+Esta célula apenas cria o titulo da seção:
 
 ```text
 1. Instalacao e imports
 ```
 
-Ela prepara o leitor para a primeira celula de codigo.
+Ela prepara o leitor para a primeira célula de código.
 
-## Celula 3: Instalar Bibliotecas E Importar Ferramentas
+## Célula 3: Instalar Bibliotecas E Importar Ferramentas
 
-Tipo: Codigo.
+Tipo: Código.
 
-Esta celula instala e importa as bibliotecas usadas no lab.
+Esta célula instala e importa as bibliotecas usadas no lab.
 
 ```python
 !pip install scikit-learn pandas wget --quiet
@@ -66,13 +66,13 @@ Esta celula instala e importa as bibliotecas usadas no lab.
 
 Esse comando e comum em notebooks do Google Colab. Ele instala pacotes Python dentro do ambiente temporario do Colab.
 
-As bibliotecas principais sao:
+As bibliotecas principaís sao:
 
 - `pandas`: usada para ler, organizar e manipular tabelas de dados;
 - `HashingVectorizer`: transforma texto em numeros;
-- `SGDClassifier`: modelo de aprendizado de maquina usado para classificacao;
+- `SGDClassifier`: modelo de aprendizado de maquina usado para classificação;
 - `accuracy_score`: calcula a porcentagem de acertos;
-- `classification_report`: mostra metricas mais detalhadas;
+- `classification_report`: mostra métricas mais detalhadas;
 - `train_test_split`: separa dados de treino e teste;
 - `wget`: baixa arquivos da internet;
 - `zipfile`: abre arquivos compactados.
@@ -85,29 +85,29 @@ Modelos de aprendizado de maquina nao entendem texto diretamente. Uma URL como:
 https://exemplo.com/login
 ```
 
-precisa ser transformada em uma representacao numerica. Essa transformacao acontece depois, com `HashingVectorizer`.
+precisa ser transformada em uma representação numerica. Essa transformação acontece depois, com `HashingVectorizer`.
 
-## Celula 4: Secao De Download E Preparacao Dos Dados
+## Célula 4: Seção De Download E Preparação Dos Dados
 
 Tipo: Markdown.
 
-Esta celula cria o titulo:
+Esta célula cria o titulo:
 
 ```text
 2. Download e preparacao dos dados
 ```
 
-Ela indica que a proxima etapa sera baixar e organizar as bases de URLs.
+Ela indica que a próxima etapa sera baixar e organizar as bases de URLs.
 
-## Celula 5: Baixar Feeds, Rotular URLs E Montar O Dataset
+## Célula 5: Baixar Feeds, Rotular URLs E Montar O Dataset
 
-Tipo: Codigo.
+Tipo: Código.
 
-Esta e uma das celulas mais importantes do notebook. Ela cria a base de treinamento.
+Esta e uma das células mais importantes do notebook. Ela cria a base de treinamento.
 
-### 1. Importacoes Extras
+### 1. Importações Extras
 
-A celula importa:
+A célula importa:
 
 - `io`: permite ler bytes baixados da internet como se fossem arquivos;
 - `requests`: faz requisicoes HTTP;
@@ -124,7 +124,7 @@ resp = requests.get(phish_url_gz, headers=headers)
 resp.raise_for_status()
 ```
 
-O PhishTank publica URLs associadas a phishing. A requisicao usa `User-Agent` porque alguns servicos exigem uma identificacao minima de quem esta acessando.
+O PhishTank publica URLs associadas a phishing. A requisicao usa `User-Agent` porque alguns serviços exigem uma identificação minima de quem esta acessando.
 
 ```python
 phish = pd.read_csv(io.BytesIO(resp.content), compression='gzip', usecols=['url'])
@@ -145,7 +145,7 @@ Depois, todas essas URLs recebem `label = 1`, que significa:
 wget.download('https://s3-us-west-1.amazonaws.com/umbrella-static/top-1m.csv.zip', umbrella_zip)
 ```
 
-Essa lista contem dominios populares. A ideia didatica e tratar dominios muito acessados como exemplos benignos.
+Essa lista contem dominios populares. A ideia didática e tratar dominios muito acessados como exemplos benignos.
 
 ```python
 umbrella['label'] = 0
@@ -205,11 +205,11 @@ Embaralhar evita que o modelo veja todos os exemplos de uma classe primeiro e to
 
 O numero `42` nao tem efeito especial no modelo. Ele e apenas uma semente aleatoria escolhida pelo autor.
 
-## Celula 6: Secao De Pre-processamento
+## Célula 6: Seção De Pre-processamento
 
 Tipo: Markdown.
 
-Esta celula cria o titulo:
+Esta célula cria o titulo:
 
 ```text
 3. Pre-processamento com HashingVectorizer
@@ -217,11 +217,11 @@ Esta celula cria o titulo:
 
 Pre-processamento e a etapa que prepara os dados para o modelo.
 
-## Celula 7: Transformar URLs Em Vetores Numericos
+## Célula 7: Transformar URLs Em Vetores Numéricos
 
-Tipo: Codigo.
+Tipo: Código.
 
-Esta celula prepara as URLs para o treinamento.
+Esta célula prepara as URLs para o treinamento.
 
 ### 1. Garantir Que Toda URL Seja Texto
 
@@ -229,7 +229,7 @@ Esta celula prepara as URLs para o treinamento.
 data['url'] = data['url'].astype(str)
 ```
 
-Mesmo que alguma URL venha como valor estranho ou nulo, essa linha forca o conteudo a virar texto.
+Mesmo que alguma URL venha como valor estranho ou nulo, essa linha forca o conteúdo a virar texto.
 
 ### 2. Separar Treino E Teste
 
@@ -258,9 +258,9 @@ A base e dividida em duas partes:
 vectorizer = HashingVectorizer(analyzer='char', ngram_range=(3,5), n_features=5000)
 ```
 
-Esse e um ponto central da parametrizacao da IA.
+Esse e um ponto central da parametrização da IA.
 
-O `HashingVectorizer` transforma texto em uma matriz numerica. Cada URL vira um vetor com varios numeros. O modelo nao ve a URL como texto; ele ve o vetor.
+O `HashingVectorizer` transforma texto em uma matriz numerica. Cada URL vira um vetor com vários numeros. O modelo nao ve a URL como texto; ele ve o vetor.
 
 #### Parametro `analyzer='char'`
 
@@ -277,7 +277,7 @@ php
 token
 ```
 
-Tambem podem aparecer em combinacoes de caracteres, como:
+Tambem podem aparecer em combinações de caracteres, como:
 
 ```text
 //-
@@ -325,7 +325,7 @@ Um valor menor e mais leve, mas pode misturar padroes diferentes na mesma posica
 print(vectorizer.transform([urls_train.iloc[0]]).shape)
 ```
 
-A saida esperada e:
+A saída esperada e:
 
 ```text
 (1, 5000)
@@ -338,11 +338,11 @@ Isso significa:
 
 O vetor e chamado de esparso porque a maioria das posicoes fica vazia ou igual a zero. Isso economiza memoria.
 
-## Celula 8: Secao De Treinamento E Avaliacao
+## Célula 8: Seção De Treinamento E Avaliação
 
 Tipo: Markdown.
 
-Esta celula cria o titulo:
+Esta célula cria o titulo:
 
 ```text
 4. Treinamento online com SGDClassifier e Avaliacao
@@ -350,13 +350,13 @@ Esta celula cria o titulo:
 
 Treinamento online significa que o modelo pode aprender em partes, usando lotes de dados.
 
-## Celula 9: Treinar O Modelo Em Lotes E Avaliar
+## Célula 9: Treinar O Modelo Em Lotes E Avaliar
 
-Tipo: Codigo.
+Tipo: Código.
 
-Esta celula treina o classificador.
+Esta célula treina o classificador.
 
-### 1. Separar URLs E Rotulos
+### 1. Separar URLs E Rótulos
 
 ```python
 urls = data['url'].astype(str)
@@ -366,7 +366,7 @@ labels = data['label'].values
 Aqui o notebook separa:
 
 - entradas: as URLs;
-- respostas esperadas: os rotulos `0` ou `1`.
+- respostas esperadas: os rótulos `0` ou `1`.
 
 ### 2. Dividir Treino E Teste Novamente
 
@@ -376,7 +376,7 @@ urls_train, urls_test, y_train, y_test = train_test_split(
 )
 ```
 
-Essa divisao repete o que ja apareceu na celula 7. Como usa os mesmos parametros, tende a gerar a mesma separacao.
+Essa divisao repete o que ja apareceu na célula 7. Como usa os mesmos parametros, tende a gerar a mesma separação.
 
 ### 3. Criar O Vetorizador
 
@@ -384,7 +384,7 @@ Essa divisao repete o que ja apareceu na celula 7. Como usa os mesmos parametros
 vectorizer = HashingVectorizer(analyzer='char', ngram_range=(3,5), n_features=5000)
 ```
 
-O vetorizador e criado de novo para garantir que esta celula tenha o objeto `vectorizer` pronto para o treinamento.
+O vetorizador e criado de novo para garantir que esta célula tenha o objeto `vectorizer` pronto para o treinamento.
 
 ### 4. Inicializar O Classificador
 
@@ -392,23 +392,23 @@ O vetorizador e criado de novo para garantir que esta celula tenha o objeto `vec
 clf = SGDClassifier(loss='log_loss', max_iter=1, warm_start=True)
 ```
 
-Esse e o principal ponto de parametrizacao do modelo de IA.
+Esse e o principal ponto de parametrização do modelo de IA.
 
-`SGDClassifier` e um classificador linear treinado com uma tecnica chamada Stochastic Gradient Descent.
+`SGDClassifier` e um classificador linear treinado com uma técnica chamada Stochastic Gradient Descent.
 
 Em termos simples:
 
 1. O modelo faz uma previsao.
-2. Compara a previsao com o rotulo correto.
+2. Compara a previsao com o rótulo correto.
 3. Mede o erro.
-4. Ajusta seus pesos internos para errar menos na proxima vez.
+4. Ajusta seus pesos internos para errar menos na próxima vez.
 5. Repete isso muitas vezes.
 
 #### Parametro `loss='log_loss'`
 
 Esse parametro define como o erro sera calculado.
 
-Com `log_loss`, o modelo se comporta como uma regressao logistica para classificacao. Isso e adequado para problemas binarios, como:
+Com `log_loss`, o modelo se comporta como uma regressao logistica para classificação. Isso e adequado para problemas binarios, como:
 
 ```text
 benigna ou maliciosa
@@ -473,7 +473,7 @@ Ou seja:
 2. entrega esses vetores ao modelo;
 3. atualiza os pesos internos do modelo.
 
-### 7. Avaliacao
+### 7. Avaliação
 
 ```python
 X_test = vectorizer.transform(urls_test)
@@ -489,7 +489,7 @@ print(classification_report(y_test, y_pred))
 
 `accuracy_score` mostra a porcentagem geral de acertos.
 
-`classification_report` mostra metricas mais detalhadas:
+`classification_report` mostra métricas mais detalhadas:
 
 - precision: quando o modelo diz que e malicioso, quantas vezes ele esta certo;
 - recall: de todas as URLs maliciosas reais, quantas ele conseguiu encontrar;
@@ -498,7 +498,7 @@ print(classification_report(y_test, y_pred))
 
 ### Cuidado Com Acuracia
 
-Acuracia alta nao significa automaticamente que o modelo e bom para producao.
+Acuracia alta nao significa automaticamente que o modelo e bom para produção.
 
 Em seguranca, falsos negativos podem ser graves:
 
@@ -514,23 +514,23 @@ URL benigna bloqueada como maliciosa.
 
 Por isso e importante olhar o relatorio completo.
 
-## Celula 10: Secao De Exemplos De Classificacao
+## Célula 10: Seção De Exemplos De Classificação
 
 Tipo: Markdown.
 
-Esta celula cria o titulo:
+Esta célula cria o titulo:
 
 ```text
 5. Mostrar exemplos das classificacoes
 ```
 
-A ideia e sair das metricas e observar exemplos concretos.
+A ideia e sair das métricas e observar exemplos concretos.
 
-## Celula 11: Mostrar URLs Classificadas Como Benignas E Maliciosas
+## Célula 11: Mostrar URLs Classificadas Como Benignas E Maliciosas
 
-Tipo: Codigo.
+Tipo: Código.
 
-Esta celula transforma novamente as URLs de teste:
+Esta célula transforma novamente as URLs de teste:
 
 ```python
 X_test = vectorizer.transform(urls_test)
@@ -555,30 +555,30 @@ results = pd.DataFrame({
 Essa tabela tem:
 
 - `url`: a URL analisada;
-- `true_label`: o rotulo real;
-- `pred_label`: o rotulo previsto pelo modelo.
+- `true_label`: o rótulo real;
+- `pred_label`: o rótulo previsto pelo modelo.
 
-Por fim, a celula mostra algumas URLs previstas como benignas e algumas previstas como maliciosas.
+Por fim, a célula mostra algumas URLs previstas como benignas e algumas previstas como maliciosas.
 
-Essa etapa e importante porque ajuda o aluno a entender que o modelo nao e uma caixa magica. Ele gera uma classificacao que pode ser comparada com o rotulo real.
+Essa etapa e importante porque ajuda o aluno a entender que o modelo nao e uma caixa magica. Ele gera uma classificação que pode ser comparada com o rótulo real.
 
-## Celula 12: Secao De Analise De URLs Avulsas
+## Célula 12: Seção De Análise De URLs Avulsas
 
 Tipo: Markdown.
 
-Esta celula cria o titulo:
+Esta célula cria o titulo:
 
 ```text
 6. Analise de URLs avulsas
 ```
 
-A proxima celula permite digitar uma URL manualmente.
+A próxima célula permite digitar uma URL manualmente.
 
-## Celula 13: Testar URLs Digitadas Pelo Usuario
+## Célula 13: Testar URLs Digitadas Pelo Usuário
 
-Tipo: Codigo.
+Tipo: Código.
 
-Esta celula cria uma funcao:
+Esta célula cria uma função:
 
 ```python
 def prever_url(url, vectorizer, model):
@@ -586,11 +586,11 @@ def prever_url(url, vectorizer, model):
 
 Ela recebe:
 
-- `url`: texto digitado pelo usuario;
+- `url`: texto digitado pelo usuário;
 - `vectorizer`: o mesmo vetorizador usado no treinamento;
 - `model`: o classificador treinado.
 
-Dentro da funcao:
+Dentro da função:
 
 ```python
 X = vectorizer.transform([url])
@@ -605,7 +605,7 @@ Depois:
 return 'MALICIOSA' if pred == 1 else 'BENIGNA'
 ```
 
-Se o modelo devolver `1`, a funcao mostra `MALICIOSA`.
+Se o modelo devolver `1`, a função mostra `MALICIOSA`.
 
 Se devolver `0`, mostra `BENIGNA`.
 
@@ -616,7 +616,7 @@ while True:
     url_teste = input("Digite uma URL para classificacao...")
 ```
 
-O notebook fica pedindo URLs ate o usuario digitar:
+O notebook fica pedindo URLs ate o usuário digitar:
 
 ```text
 sair
@@ -632,19 +632,19 @@ URL digitada -> vetor numerico -> modelo treinado -> classe prevista
 
 ## Parametros Mais Importantes Do Lab
 
-Esta secao resume os parametros que mais afetam o comportamento da IA.
+Esta seção resume os parametros que mais afetam o comportamento da IA.
 
 | Parametro | Onde Aparece | O Que Controla |
 | --- | --- | --- |
-| `label = 1` | Preparacao dos dados | Define exemplo malicioso |
-| `label = 0` | Preparacao dos dados | Define exemplo benigno |
-| `test_size=0.2` | Divisao treino/teste | Reserva 20% dos dados para avaliacao |
+| `label = 1` | Preparação dos dados | Define exemplo malicioso |
+| `label = 0` | Preparação dos dados | Define exemplo benigno |
+| `test_size=0.2` | Divisao treino/teste | Reserva 20% dos dados para avaliação |
 | `random_state=42` | Amostragem e divisao | Torna resultados mais reproduziveis |
 | `analyzer='char'` | `HashingVectorizer` | Analisa a URL por caracteres |
 | `ngram_range=(3,5)` | `HashingVectorizer` | Usa pedacos de 3 a 5 caracteres |
-| `n_features=5000` | `HashingVectorizer` | Define o tamanho do vetor numerico |
-| `loss='log_loss'` | `SGDClassifier` | Usa erro adequado para classificacao binaria |
-| `max_iter=1` | `SGDClassifier` | Faz uma iteracao por chamada de treino |
+| `n_features=5000` | `HashingVectorizer` | Define o tamanho do vetor numérico |
+| `loss='log_loss'` | `SGDClassifier` | Usa erro adequado para classificação binaria |
+| `max_iter=1` | `SGDClassifier` | Faz uma iteração por chamada de treino |
 | `warm_start=True` | `SGDClassifier` | Reaproveita aprendizado anterior |
 | `classes=[0,1]` | Primeiro `partial_fit` | Informa as classes possiveis |
 | `batch_size=100_000` | Loop de treino | Define quantas URLs entram por lote |
@@ -661,15 +661,15 @@ O modelo ajusta pesos internos para separar URLs benignas de maliciosas.
 Quando recebe uma URL nova, ele aplica os mesmos passos e escolhe a classe mais provavel.
 ```
 
-## Limitacoes Do Lab
+## Limitações Do Lab
 
-Este notebook e didatico e tem algumas limitacoes importantes:
+Este notebook e didático e tem algumas limitações importantes:
 
 - dominios populares nao sao garantia absoluta de benignidade;
-- feeds publicos podem estar incompletos ou desatualizados;
+- feeds públicos podem estar incompletos ou desatualizados;
 - o modelo olha principalmente padroes textuais da URL;
-- o modelo nao acessa o conteudo da pagina;
+- o modelo nao acessa o conteúdo da pagina;
 - o modelo nao analisa certificados, DNS, WHOIS, JavaScript ou comportamento;
-- bons resultados no notebook nao significam prontidao para producao.
+- bons resultados no notebook nao significam prontidao para produção.
 
-Em um ambiente real, classificacao de URLs deve combinar varias fontes e tecnicas, como reputacao, sandboxing, analise de conteudo, telemetria, regras, listas de bloqueio e revisao humana.
+Em um ambiente real, classificação de URLs deve combinar varias fontes e técnicas, como reputação, sandboxing, análise de conteúdo, telemetria, regras, listas de bloqueio e revisao humana.

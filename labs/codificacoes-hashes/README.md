@@ -1,6 +1,6 @@
-# Lab: Codificacoes E Hashes
+# Lab: Codificações E Hashes
 
-Este laboratorio usa um notebook Python para demonstrar diferencas entre codificacoes e funcoes de hash usadas em seguranca da informacao.
+Este laboratório usa um notebook Python para demonstrar diferencas entre codificações e funções de hash usadas em seguranca da informação.
 
 ## Arquivos
 
@@ -9,7 +9,7 @@ lab_codificacoes_hashes.ipynb
 EXERCISES.md
 ```
 
-## Pre-requisitos
+## Pré-requisitos
 
 Escolha uma das opcoes abaixo:
 
@@ -18,9 +18,9 @@ Escolha uma das opcoes abaixo:
 - Jupyter Notebook;
 - JupyterLab.
 
-Para Google Colab, nao e necessario instalar Python localmente. Para as opcoes locais, e necessario ter Python instalado.
+Para Google Colab, nao e necessário instalar Python localmente. Para as opcoes locais, e necessário ter Python instalado.
 
-O notebook usa apenas bibliotecas padrao do Python, entao nao precisa instalar pacotes extras para executar as celulas atuais.
+O notebook usa apenas bibliotecas padrao do Python, entao nao precisa instalar pacotes extras para executar as células atuais.
 
 ## Opcao 1: Rodar Pelo Google Colab
 
@@ -33,11 +33,11 @@ https://colab.research.google.com/github/rodrigorosamuniz/labs-seguranca-noteboo
 Depois:
 
 1. Clique em `Conectar`, se o Colab pedir.
-2. Execute a celula de codigo.
+2. Execute a célula de código.
 3. Digite um texto ficticio quando o notebook solicitar.
-4. Compare as saidas geradas.
+4. Compare as saídas geradas.
 
-## Como Baixar O Repositorio
+## Como Baixar O Repositório
 
 Use esta opcao se quiser rodar localmente pelo VS Code, Jupyter Notebook ou JupyterLab.
 
@@ -52,11 +52,11 @@ cd labs-seguranca-notebooks
 2. Instale a extensao `Jupyter`, caso ainda nao tenha.
 3. Abra o arquivo `labs/codificacoes-hashes/lab_codificacoes_hashes.ipynb`.
 4. Selecione um interpretador Python quando o VS Code pedir.
-5. Clique em `Run All` ou execute as celulas uma por uma.
+5. Clique em `Run All` ou execute as células uma por uma.
 
 ## Opcao 3: Rodar Pelo Jupyter Notebook
 
-Instale o Jupyter, se necessario:
+Instale o Jupyter, se necessário:
 
 ```bash
 python -m pip install notebook
@@ -76,7 +76,7 @@ labs/codificacoes-hashes/lab_codificacoes_hashes.ipynb
 
 ## Opcao 4: Rodar Pelo JupyterLab
 
-Instale o JupyterLab, se necessario:
+Instale o JupyterLab, se necessário:
 
 ```bash
 python -m pip install jupyterlab
@@ -96,12 +96,12 @@ labs/codificacoes-hashes/lab_codificacoes_hashes.ipynb
 
 ## Como Usar O Notebook
 
-1. Leia a primeira celula Markdown para entender o objetivo.
-2. Execute a celula de codigo.
+1. Leia a primeira célula Markdown para entender o objetivo.
+2. Execute a célula de código.
 3. Digite um texto quando o notebook pedir.
-4. Compare as saidas geradas.
+4. Compare as saídas geradas.
 5. Rode novamente com textos diferentes.
-6. Resolva os exercicios em [EXERCISES.md](EXERCISES.md).
+6. Resolva os exercícios em [EXERCISES.md](EXERCISES.md).
 
 Use exemplos simples para comecar:
 
@@ -123,17 +123,17 @@ senha124
 
 ## O Que Observar
 
-Durante a execucao, observe:
+Durante a execução, observe:
 
-- codificacoes transformam a representacao do texto;
-- codificacoes podem ser revertidas quando o algoritmo e conhecido;
+- codificações transformam a representação do texto;
+- codificações podem ser revertidas quando o algoritmo e conhecido;
 - hashes geram resumos de tamanho fixo;
 - hashes nao foram feitos para serem revertidos;
-- pequenas mudancas no texto geram hashes muito diferentes;
-- hashes sao usados para integridade, comparacao e armazenamento seguro de verificadores, mas nao substituem criptografia.
+- pequenas mudanças no texto geram hashes muito diferentes;
+- hashes sao usados para integridade, comparação e armazenamento seguro de verificadores, mas nao substituem criptografia.
 
-## Cuidados Didaticos
+## Cuidados Didáticos
 
-Nao use senhas reais, tokens reais, CPFs, emails pessoais ou qualquer dado sensivel no notebook. Use apenas exemplos ficticios.
+Nao use senhas reais, tokens reais, CPFs, emails pessoais ou qualquer dado sensível no notebook. Use apenas exemplos ficticios.
 
-Este notebook e demonstrativo. Ele nao implementa armazenamento seguro de senhas, salt, pepper, KDF, criptografia simetrica ou assinatura digital.
+Este notebook e demonstrativo. Ele nao implementa armazenamento seguro de senhas, salt, pepper, KDF, criptografia simétrica ou assinatura digital.

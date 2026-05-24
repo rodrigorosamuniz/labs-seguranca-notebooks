@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validate-notebooks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate notebook JSON
+        run: |
+          python -m json.tool labs/codificacoes-hashes/lab_codificacoes_hashes.ipynb > /dev/null
+          python -m json.tool labs/shodan-excel-analytics/shodan_excel_analytics.ipynb > /dev/null
+          python -m json.tool labs/classificador-urls-maliciosas/malicious_url_classifier_lab_large.ipynb > /dev/null
+
+      - name: Check required lab files
+        run: |
+          test -f README.md
+          test -f SECURITY.md
+          test -f labs/codificacoes-hashes/README.md
+          test -f labs/codificacoes-hashes/EXERCISES.md
+          test -f labs/shodan-excel-analytics/README.md
+          test -f labs/shodan-excel-analytics/EXERCISES.md
+          test -f labs/classificador-urls-maliciosas/README.md
+          test -f labs/classificador-urls-maliciosas/EXPLICACAO_CELULAS.md

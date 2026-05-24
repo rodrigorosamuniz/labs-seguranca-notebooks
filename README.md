@@ -1,38 +1,38 @@
 # Labs De Seguranca Em Notebooks
 
-Repositorio publico com notebooks didaticos para aulas de seguranca da informacao.
+Repositório público com notebooks didáticos para aulas de seguranca da informação.
 
-Cada laboratorio fica em uma pasta propria dentro de `labs/`, com notebook e instrucoes de execucao. Alguns laboratorios tambem incluem exercicios individuais.
+Cada laboratório fica em uma pasta propria dentro de `labs/`, com notebook e instrucoes de execução. Alguns laboratórios tambem incluem exercícios individuais.
 
-## Laboratorios
+## Laboratórios
 
-| Laboratorio | Tema | Material |
+| Laboratório | Tema | Material |
 | --- | --- | --- |
-| Codificacoes e hashes | Base64, URL encoding, SHA-256, SHA-512 e diferencas entre codificacao e hash | [Abrir lab](labs/codificacoes-hashes/README.md) |
-| Shodan Excel Analytics | Analise defensiva de resultados Shodan com tabelas, graficos, score e export Excel | [Abrir lab](labs/shodan-excel-analytics/README.md) |
-| Classificador de URLs maliciosas | Classificacao supervisionada de URLs com HashingVectorizer e SGDClassifier | [Abrir lab](labs/classificador-urls-maliciosas/README.md) |
+| Codificações e hashes | Base64, URL encoding, SHA-256, SHA-512 e diferencas entre codificação e hash | [Abrir lab](labs/codificações-hashes/README.md) |
+| Shodan Excel Analytics | Análise defensiva de resultados Shodan com tabelas, gráficos, score e export Excel | [Abrir lab](labs/shodan-excel-analytics/README.md) |
+| Classificador de URLs maliciosas | Classificação supervisionada de URLs com HashingVectorizer e SGDClassifier | [Abrir lab](labs/classificador-urls-maliciosas/README.md) |
 
 ## Como Usar
 
 Opcao recomendada para alunos:
 
-1. Abra o `README.md` do laboratorio desejado pelo GitHub.
-2. Use o link do Google Colab indicado no laboratorio.
-3. Execute as celulas do notebook no navegador.
-4. Leia os arquivos complementares indicados pelo laboratorio.
+1. Abra o `README.md` do laboratório desejado pelo GitHub.
+2. Use o link do Google Colab indicado no laboratório.
+3. Execute as células do notebook no navegador.
+4. Leia os arquivos complementares indicados pelo laboratório.
 
 Opcao local:
 
-1. Clone o repositorio:
+1. Clone o repositório:
 
 ```bash
 git clone https://github.com/rodrigorosamuniz/labs-seguranca-notebooks.git
 cd labs-seguranca-notebooks
 ```
 
-2. Abra a pasta do laboratorio desejado.
-3. Siga o `README.md` do laboratorio.
-4. Leia os arquivos complementares indicados pelo laboratorio.
+2. Abra a pasta do laboratório desejado.
+3. Siga o `README.md` do laboratório.
+4. Leia os arquivos complementares indicados pelo laboratório.
 
 ## Requisitos Gerais
 
@@ -43,10 +43,10 @@ Os notebooks devem rodar em pelo menos uma destas opcoes:
 - Jupyter Notebook;
 - JupyterLab.
 
-Cada laboratorio informa seus requisitos especificos.
+Cada laboratório informa seus requisitos especificos.
 
 ## Cuidados
 
 Nao use dados reais, senhas reais, tokens, chaves privadas, CPFs, emails pessoais ou dados corporativos nos notebooks.
 
-Estes materiais sao didaticos e nao devem ser tratados como implementacoes prontas para producao.
+Estes materiais sao didáticos e nao devem ser tratados como implementações prontas para produção.
